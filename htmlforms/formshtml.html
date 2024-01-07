@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html-Forms</title>
+  </head>
+  <body>
+    <form >
+      <div>
+        <label for="frstname">İsim</label>
+        <!-- Her input'un label'i vardır.Label ve input birbirine bağlanması gerekmektedir. -->
+        <input
+          type="text"
+          name="frstname"
+          id="frstname"
+          minlength="3"
+          maxlength="15"
+          required
+        />
+        <!-- min- max length'ler karakter sayılarını belirtir.İsmi gibi düşün min ise min karakter max ise max  -->
+        <!-- label(for)-input(id) bağlaması for ve id lerin eş olması ile yapılır. -->
+        <!-- REQUİRED : O box ı doldurmaya mecbur bırakıyorsun -->
+      </div>
+      <br />
+      <div>
+        <label for="srnme">Surname</label>
+        <input
+          type="text"
+          name="srnme"
+          id="srnme"
+          minlength="4"
+          maxlength="15"
+          required
+        /><!-- Type kutucuğun içine ne tip bilgi girilmesini belirtir.(text-mail-password vs.) -->
+      </div>
+      <br />
+      <div>
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="E-mail yazınız"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="Weight">Weight</label>
+        <!-- Text'te sadece e harfi tanımlı ve kullanılabiliyor ona dikkat etmek gerekli -->
+        <input
+          type="number"
+          name="weight"
+          id="Weight"
+          min="20"
+          max="200"
+          step="0.5"
+        />
+        <!-- min: alınabilcek değerin min değeri  max: yazılabilecek max sayı-->
+      </div>
+      <!-- step: bu özellik ise kaçarlı artacağını belirtir.Ondalık kısım artıp azalabilir. -->
+      <br />
+      <div>
+        <label for="phonenumber">Phone Number</label>
+        <input type="number" name="phonenumber" id="phonenumber" />
+      </div>
+      <br />
+      <div>
+        <label for="birthday">birthday</label>
+        <input
+          type="date"
+          name="birthday"
+          id="birthday"
+          min="1924-01-01"
+          max="2019-01-01"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="website">Website</label>
+        <input type="url" name="web_site" id="website" />
+      </div>
+      <br />
+      <div>
+        <label for="select_color">Select your color</label>
+        <input type="color" name="color" id="select_color" />
+      </div>
+      <br />
+      <div>
+        <label for="items">What do you want?</label>
+        <input
+          type="search"
+          name="items"
+          id="items"
+          list="dtlst"
+          value="items"
+        />
+        <datalist id="dtlst">
+          <option value="Shoes wanted">Shoes</option>
+          <!-- burda value değeri farklı yazılırsa o seçenekte ikisi de görülür.  -->
+          <option value="T-shirt">T-shirt</option>
+          <option value="Pant">Pant</option>
+          <option value="Sweatshirt">Sweatshirt</option>
+          <option value="Coffee">Coffee</option>
+          <option value="Book">Book</option>
+          <option value="Tea">Tea</option>
+        </datalist>
+      </div>
+      <br />
+      <div>
+        <label for="pass">Enter pin!</label>
+        <input type="password" name="pass" id="pass" />
+      </div>
+      <br />
+      <div>
+        <label for="pass_confirm">Pin Confirm</label>
+        <input type="password" name="pass" id="pass_confirm" />
+      </div>
+      <br />
+      <div>
+        <label for="profile_pict">Profil Fotonuz</label>
+        <input
+          type="file"
+          name="profile_pict"
+          id="profile_pict"
+          accept="image/*"
+        />
+        <!-- accept: Bu özellik kabul edilebilir uzantıları seçmeye yarar. Resimse resim dosya ise dosya olduğunu belirtmek lazım -->
+      </div>
+      <br />
+      <div>
+        <label for="favorite_fruit">Favour fruit</label>
+        <select id="favorite_fruit" name="favorite_fruit" multiple>
+          <!-- Multple: Çoklu seçim yapmamızı  sağlar -->
+          <option value="Banana">Banana</option>
+          <option value="Orange" selected>Orange</option>
+          <!-- selected o değeri direkt seçili yapar. -->
+          <option value="Strawberry">Strawberry</option>
+          <option value="Apple">Apple</option>
+        </select>
+      </div>
+      <fieldset>
+        <!-- bu etiket bir nevi Box yapmaya yarar. -->
+        <legend>Your Hobbies</legend>
+        <input
+          type="checkbox"
+          name="hobbies"
+          id="hobbies_coding"
+          value="coding"
+        />
+        <!-- Checkbox ile birden fazla seçeneği işaretleyebilirsin -->
+        <label for="hobbies_coding">Coding</label>
+        <input type="checkbox" name="hobbies" id="hobbies_swim" value="swim" />
+        <label for="hobbies_swim">Swim</label>
+        <input
+          type="checkbox"
+          name="hobbies"
+          id="hobbies_travel"
+          value="travel"
+          checked
+        />
+        <!-- checked : direkt o değeri seçili yapar. -->
+        <label for="hobbies_travel">Travel</label>
+        <input
+          type="checkbox"
+          name="hobbies"
+          id="hobbies_soccer"
+          value="soccer"
+        />
+        <label for="hobbies_soccer">Soccer</label>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Gender</legend>
+        <!-- **VALUE & NAME DEĞERLERİ**- (ASIL yapılan etikette (*İNPUT-OPTİON-SELECT gibi*) belirtilir.)Seçilen değeri back-end'e ifade eden etikettir(Male gibi)Her değerde value gerekli değildir(Password gibi).  NAME'de o değerin ne olduğunu belirten etiket.(Gender gibi) -->
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="unknown" value="unknown" />
+        <label for="unknown">Unknown</label>
+      </fieldset>
+    </form>
+  </body>
+</html>
